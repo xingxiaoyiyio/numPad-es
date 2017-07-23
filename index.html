@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0" />
+    <meta HTTP-EQUIV="pragma" CONTENT="no-cache">
+    <meta HTTP-EQUIV="Cache-Control" CONTENT="no-cache, must-revalidate">
+    <meta HTTP-EQUIV="expires" CONTENT="0">
+    <title>gather</title>
+    <style>
+
+        .box{
+          height: 200px;
+          width: 400px;
+          margin:50px auto;
+        }
+        .btn{
+          border-radius: 8px;
+          background: #327931;
+          color: #fff;
+          height: 40px;
+          float: left;
+          font-size: 16px;
+          line-height: 40px;
+          margin-left: 15px;
+          text-align: center;
+          width: 100px
+        }
+        input{
+          border:none;
+          height: 40px;
+          line-height: 40px;
+          width: 150px;
+          font-size: 16px;
+          float: left;
+          border-bottom: 2px solid #327931;
+        }
+    </style>
+    <link rel="stylesheet" type="text/css" href="numPad.css">
+</head>
+<body>
+    
+    <div class="box">
+      <input type="text" readonly=true id='input1'>
+      <div class='btn'>点击输入</div>
+    </div>
+
+    <div id='numPadBox'></div>
+
+    <script type="text/javascript" src='jquery-1.12.4.min.js'></script>
+    <script type="text/javascript" src="numKeyBoard.js"></script>
+    
+
+    <script type="text/javascript">
+      var numPad= new NumKeyBoard({
+          precision: 2,       //精确度
+          minVal:10,           //最小值
+          maxVal:1000          //最大值
+      });
+
+      $(".btn").click(function(){
+            numPad.open(function(data){
+              $("#input1").val(data)
+            })
+      })
+
+
+    </script>
+</body>
+</html>
