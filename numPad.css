@@ -22,13 +22,14 @@
 
 #numKeyBoard-box input{
 	box-sizing: border-box;
-	margin-top: 15px;
-	height: 28px;
+    margin-top: 15px;
+    line-height: 40px;
+    height: 40px;
     width: 100%;
     outline: none;
-    font-size: 20px;
-    padding-right:10px;
-    border:none;
+    font-size: 30px;
+    padding-right: 10px;
+    border: none;
     text-align: right;
 }
 
